@@ -1,0 +1,927 @@
+Microsoft Windows [Version 10.0.18362.900]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\Shreyansh>cd C:\Program Files\MongoDB\Server\4.4\bin
+
+C:\Program Files\MongoDB\Server\4.4\bin>mongo
+MongoDB shell version v4.4.3
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("a21c2c20-0957-421e-83d2-01583c2e2162") }
+MongoDB server version: 4.4.3
+---
+The server generated these startup warnings when booting:
+        2021-02-13T20:39:18.963+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> use praxis
+switched to db praxis
+> db.createcollection("restaurant")
+uncaught exception: TypeError: db.createcollection is not a function :
+@(shell):1:1
+>  db.createCollection("restaurant")
+{ "ok" : 1 }
+> db.restaurant.insert({
+... "name": "ITC",
+...   "restaurant_id": "20075",
+...   "address": {
+...      "building": "10",
+...      "coord": [ -74.85, 50.84 ],
+...      "street": "ITC Ave",
+...      "zipcode": "560076"
+...   },
+...   "borough": "croydon",
+...   "cuisine": "Bakery",
+...   "grades": [
+...      { "date": { "$date": 1393804800000 }, "grade": "A", "score": 4 },
+...      { "date": { "$date": 1378857600000 }, "grade": "B", "score": 5 },
+...      { "date": { "$date": 1358985600000 }, "grade": "A", "score": 10 },
+...      { "date": { "$date": 1322006400000 }, "grade": "C", "score": 9 },
+...      { "date": { "$date": 1299715200000 }, "grade": "B", "score": 14 }
+...   ]
+...
+... })
+WriteResult({ "nInserted" : 1 })
+> db.restaurant.insert({
+... "name": "Taj hotels",
+...   "restaurant_id": "20076",
+...   "address": {
+...      "building": "11",
+...      "coord": [ -23.877, 23. 447 ],
+...      "street": "Taj street",
+...      "zipcode": "560077"
+...   },
+...   "borough": "Ealing",
+...   "cuisine": "Hyderabadi",
+...   "grades": [
+...      { "date": { "$date": 1393804800000 }, "grade": "D", "score": 4 },
+...      { "date": { "$date": 1378857600000 }, "grade": "A", "score": 6 },
+...      { "date": { "$date": 1358985600000 }, "grade": "C", "score": 11 },
+...      { "date": { "$date": 1322006400000 }, "grade": "A", "score": 9 },
+...      { "date": { "$date": 1299715200000 }, "grade": "B", "score": 4 }
+...   ]
+...
+... })
+uncaught exception: SyntaxError: missing ] after element list :
+@(shell):6:29
+> db.restaurant.insert({
+... "name": "Taj hotels",
+...   "restaurant_id": "20076",
+...   "address": {
+...      "building": "11",
+...      "coord": [  -23.877, 23.447],
+...      "street": "Taj street",
+...      "zipcode": "560077"
+...   },
+...   "borough": "Ealing",
+...   "cuisine": "Hyderabadi",
+...   "grades": [
+...      { "date": { "$date": 1393804800000 }, "grade": "D", "score": 4 },
+...      { "date": { "$date": 1378857600000 }, "grade": "A", "score": 6 },
+...      { "date": { "$date": 1358985600000 }, "grade": "C", "score": 11 },
+...      { "date": { "$date": 1322006400000 }, "grade": "A", "score": 9 },
+...      { "date": { "$date": 1299715200000 }, "grade": "B", "score": 4 }
+...   ]
+...
+... })
+WriteResult({ "nInserted" : 1 })
+> db.restaurant.insert({
+... "name": "4 Seasons",
+...   "restaurant_id": "20077",
+...   "address": {
+...      "building": "12",
+...      "coord": [  -43.877, 53.447],
+...      "street": "27th main",
+...      "zipcode": "560078"
+...   },
+...   "borough": "Darling",
+...   "cuisine": "Gujrati",
+...   "grades": [
+...      { "date": { "$date": 1393804800000 }, "grade": "A", "score": 7 },
+...      { "date": { "$date": 1378857600000 }, "grade": "A", "score": 8 },
+...      { "date": { "$date": 1358985600000 }, "grade": "B", "score": 10 },
+...      { "date": { "$date": 1322006400000 }, "grade": "B", "score": 8 },
+...      { "date": { "$date": 1299715200000 }, "grade": "C", "score": 6 }
+...   ]
+...
+... })
+WriteResult({ "nInserted" : 1 })
+> db.restaurant.insert({
+... "name": "JP mariott",
+...   "restaurant_id": "20078",
+...   "address": {
+...      "building": "13",
+...      "coord": [  -63.877, 83.487],
+...      "street": "29th main",
+...      "zipcode": "560079"
+...   },
+...   "borough": "Gargling",
+...   "cuisine": "Marvadi",
+...   "grades": [
+...      { "date": { "$date": 1393804800000 }, "grade": "C", "score": 9 },
+...      { "date": { "$date": 1378857600000 }, "grade": "C", "score": 10 },
+...      { "date": { "$date": 1358985600000 }, "grade": "A", "score": 11 },
+...      { "date": { "$date": 1322006400000 }, "grade": "B", "score": 15 },
+...      { "date": { "$date": 1299715200000 }, "grade": "A", "score": 8 }
+...   ]
+...
+... })
+WriteResult({ "nInserted" : 1 })
+> db.restaurant.insert({
+... "name": "Obreoi",
+...   "restaurant_id": "20079",
+...   "address": {
+...      "building": "14",
+...      "coord": [  -83.877, 93.487],
+...      "street": "30th main",
+...      "zipcode": "560080"
+...   },
+...   "borough": "Lion",
+...   "cuisine": "south indian",
+...   "grades": [
+...      { "date": { "$date": 1393804800000 }, "grade": "A", "score": 12 },
+...      { "date": { "$date": 1378857600000 }, "grade": "A", "score": 11 },
+...      { "date": { "$date": 1358985600000 }, "grade": "B", "score": 13 },
+...      { "date": { "$date": 1322006400000 }, "grade": "A", "score": 14 },
+...      { "date": { "$date": 1299715200000 }, "grade": "C", "score": 9 }
+...   ]
+...
+... })
+WriteResult({ "nInserted" : 1 })
+> db.restaurant.insert({
+... "name": "7 Seas",
+...   "restaurant_id": "20080",
+...   "address": {
+...      "building": "15",
+...      "coord": [  -103.877, 63.487],
+...      "street": "31th main",
+...      "zipcode": "560081"
+...   },
+...   "borough": "Tiger",
+...   "cuisine": "malyali",
+...   "grades": [
+...      { "date": { "$date": 1393804800000 }, "grade": "B", "score": 15 },
+...      { "date": { "$date": 1378857600000 }, "grade": "C", "score": 18 },
+...      { "date": { "$date": 1358985600000 }, "grade": "A", "score": 12 },
+...      { "date": { "$date": 1322006400000 }, "grade": "A", "score": 10 },
+...      { "date": { "$date": 1299715200000 }, "grade": "A", "score": 6 }
+...   ]
+...
+... })
+WriteResult({ "nInserted" : 1 })
+> db.restaurant.find().pretty()
+{
+        "_id" : ObjectId("602a7a3e641bd14ef2349412"),
+        "name" : "ITC",
+        "restaurant_id" : "20075",
+        "address" : {
+                "building" : "10",
+                "coord" : [
+                        -74.85,
+                        50.84
+                ],
+                "street" : "ITC Ave",
+                "zipcode" : "560076"
+        },
+        "borough" : "croydon",
+        "cuisine" : "Bakery",
+        "grades" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "grade" : "A",
+                        "score" : 4
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "grade" : "B",
+                        "score" : 5
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "grade" : "A",
+                        "score" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "grade" : "C",
+                        "score" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "grade" : "B",
+                        "score" : 14
+                }
+        ]
+}
+{
+        "_id" : ObjectId("602a7c86641bd14ef2349413"),
+        "name" : "Taj hotels",
+        "restaurant_id" : "20076",
+        "address" : {
+                "building" : "11",
+                "coord" : [
+                        -23.877,
+                        23.447
+                ],
+                "street" : "Taj street",
+                "zipcode" : "560077"
+        },
+        "borough" : "Ealing",
+        "cuisine" : "Hyderabadi",
+        "grades" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "grade" : "D",
+                        "score" : 4
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "grade" : "A",
+                        "score" : 6
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "grade" : "C",
+                        "score" : 11
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "grade" : "A",
+                        "score" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "grade" : "B",
+                        "score" : 4
+                }
+        ]
+}
+{
+        "_id" : ObjectId("602a7e6a641bd14ef2349414"),
+        "name" : "4 Seasons",
+        "restaurant_id" : "20077",
+        "address" : {
+                "building" : "12",
+                "coord" : [
+                        -43.877,
+                        53.447
+                ],
+                "street" : "27th main",
+                "zipcode" : "560078"
+        },
+        "borough" : "Darling",
+        "cuisine" : "Gujrati",
+        "grades" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "grade" : "A",
+                        "score" : 7
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "grade" : "A",
+                        "score" : 8
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "grade" : "B",
+                        "score" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "grade" : "B",
+                        "score" : 8
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "grade" : "C",
+                        "score" : 6
+                }
+        ]
+}
+{
+        "_id" : ObjectId("602a7ef1641bd14ef2349415"),
+        "name" : "JP mariott",
+        "restaurant_id" : "20078",
+        "address" : {
+                "building" : "13",
+                "coord" : [
+                        -63.877,
+                        83.487
+                ],
+                "street" : "29th main",
+                "zipcode" : "560079"
+        },
+        "borough" : "Gargling",
+        "cuisine" : "Marvadi",
+        "grades" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "grade" : "C",
+                        "score" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "grade" : "C",
+                        "score" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "grade" : "A",
+                        "score" : 11
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "grade" : "B",
+                        "score" : 15
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "grade" : "A",
+                        "score" : 8
+                }
+        ]
+}
+{
+        "_id" : ObjectId("602a7fb3641bd14ef2349416"),
+        "name" : "Obreoi",
+        "restaurant_id" : "20079",
+        "address" : {
+                "building" : "14",
+                "coord" : [
+                        -83.877,
+                        93.487
+                ],
+                "street" : "30th main",
+                "zipcode" : "560080"
+        },
+        "borough" : "Lion",
+        "cuisine" : "south indian",
+        "grades" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "grade" : "A",
+                        "score" : 12
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "grade" : "A",
+                        "score" : 11
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "grade" : "B",
+                        "score" : 13
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "grade" : "A",
+                        "score" : 14
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "grade" : "C",
+                        "score" : 9
+                }
+        ]
+}
+{
+        "_id" : ObjectId("602a84bc641bd14ef2349417"),
+        "name" : "7 Seas",
+        "restaurant_id" : "20080",
+        "address" : {
+                "building" : "15",
+                "coord" : [
+                        -103.877,
+                        63.487
+                ],
+                "street" : "31th main",
+                "zipcode" : "560081"
+        },
+        "borough" : "Tiger",
+        "cuisine" : "malyali",
+        "grades" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "grade" : "B",
+                        "score" : 15
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "grade" : "C",
+                        "score" : 18
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "grade" : "A",
+                        "score" : 12
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "grade" : "A",
+                        "score" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "grade" : "A",
+                        "score" : 6
+                }
+        ]
+}
+> db.restaurant.find()
+{ "_id" : ObjectId("602a7a3e641bd14ef2349412"), "name" : "ITC", "restaurant_id" : "20075", "address" : { "building" : "10", "coord" : [ -74.85, 50.84 ], "street" : "ITC Ave", "zipcode" : "560076" }, "borough" : "croydon", "cuisine" : "Bakery", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 4 }, { "date" : { "$date" : 1378857600000 }, "grade" : "B", "score" : 5 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "C", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 14 } ] }
+{ "_id" : ObjectId("602a7c86641bd14ef2349413"), "name" : "Taj hotels", "restaurant_id" : "20076", "address" : { "building" : "11", "coord" : [ -23.877, 23.447 ], "street" : "Taj street", "zipcode" : "560077" }, "borough" : "Ealing", "cuisine" : "Hyderabadi", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "D", "score" : 4 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 6 }, { "date" : { "$date" : 1358985600000 }, "grade" : "C", "score" : 11 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 4 } ] }
+{ "_id" : ObjectId("602a7e6a641bd14ef2349414"), "name" : "4 Seasons", "restaurant_id" : "20077", "address" : { "building" : "12", "coord" : [ -43.877, 53.447 ], "street" : "27th main", "zipcode" : "560078" }, "borough" : "Darling", "cuisine" : "Gujrati", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 7 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 8 }, { "date" : { "$date" : 1358985600000 }, "grade" : "B", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "B", "score" : 8 }, { "date" : { "$date" : 1299715200000 }, "grade" : "C", "score" : 6 } ] }
+{ "_id" : ObjectId("602a7ef1641bd14ef2349415"), "name" : "JP mariott", "restaurant_id" : "20078", "address" : { "building" : "13", "coord" : [ -63.877, 83.487 ], "street" : "29th main", "zipcode" : "560079" }, "borough" : "Gargling", "cuisine" : "Marvadi", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "C", "score" : 9 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 10 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 11 }, { "date" : { "$date" : 1322006400000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 8 } ] }
+{ "_id" : ObjectId("602a7fb3641bd14ef2349416"), "name" : "Obreoi", "restaurant_id" : "20079", "address" : { "building" : "14", "coord" : [ -83.877, 93.487 ], "street" : "30th main", "zipcode" : "560080" }, "borough" : "Lion", "cuisine" : "south indian", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 11 }, { "date" : { "$date" : 1358985600000 }, "grade" : "B", "score" : 13 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 14 }, { "date" : { "$date" : 1299715200000 }, "grade" : "C", "score" : 9 } ] }
+{ "_id" : ObjectId("602a84bc641bd14ef2349417"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : "560081" }, "borough" : "Tiger", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+> db.restaurant.find({},{"restaurant_id" : 1,"name":1,"borough":1,"cuisine" :1})
+{ "_id" : ObjectId("602a7a3e641bd14ef2349412"), "name" : "ITC", "restaurant_id" : "20075", "borough" : "croydon", "cuisine" : "Bakery" }
+{ "_id" : ObjectId("602a7c86641bd14ef2349413"), "name" : "Taj hotels", "restaurant_id" : "20076", "borough" : "Ealing", "cuisine" : "Hyderabadi" }
+{ "_id" : ObjectId("602a7e6a641bd14ef2349414"), "name" : "4 Seasons", "restaurant_id" : "20077", "borough" : "Darling", "cuisine" : "Gujrati" }
+{ "_id" : ObjectId("602a7ef1641bd14ef2349415"), "name" : "JP mariott", "restaurant_id" : "20078", "borough" : "Gargling", "cuisine" : "Marvadi" }
+{ "_id" : ObjectId("602a7fb3641bd14ef2349416"), "name" : "Obreoi", "restaurant_id" : "20079", "borough" : "Lion", "cuisine" : "south indian" }
+{ "_id" : ObjectId("602a84bc641bd14ef2349417"), "name" : "7 Seas", "restaurant_id" : "20080", "borough" : "Tiger", "cuisine" : "malyali" }
+> db.restaurant.find({},{"restaurant_id" : 1,"name":1,"borough":1,"cuisine" :1,"_id":0})
+{ "name" : "ITC", "restaurant_id" : "20075", "borough" : "croydon", "cuisine" : "Bakery" }
+{ "name" : "Taj hotels", "restaurant_id" : "20076", "borough" : "Ealing", "cuisine" : "Hyderabadi" }
+{ "name" : "4 Seasons", "restaurant_id" : "20077", "borough" : "Darling", "cuisine" : "Gujrati" }
+{ "name" : "JP mariott", "restaurant_id" : "20078", "borough" : "Gargling", "cuisine" : "Marvadi" }
+{ "name" : "Obreoi", "restaurant_id" : "20079", "borough" : "Lion", "cuisine" : "south indian" }
+{ "name" : "7 Seas", "restaurant_id" : "20080", "borough" : "Tiger", "cuisine" : "malyali" }
+>
+>
+>
+>
+>
+> db.restaurant.find({},{"restaurant_id" : 1,"name":1,"borough":1,"address.zipcode" :1,"_id":0})
+{ "name" : "ITC", "restaurant_id" : "20075", "address" : { "zipcode" : "560076" }, "borough" : "croydon" }
+{ "name" : "Taj hotels", "restaurant_id" : "20076", "address" : { "zipcode" : "560077" }, "borough" : "Ealing" }
+{ "name" : "4 Seasons", "restaurant_id" : "20077", "address" : { "zipcode" : "560078" }, "borough" : "Darling" }
+{ "name" : "JP mariott", "restaurant_id" : "20078", "address" : { "zipcode" : "560079" }, "borough" : "Gargling" }
+{ "name" : "Obreoi", "restaurant_id" : "20079", "address" : { "zipcode" : "560080" }, "borough" : "Lion" }
+{ "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "zipcode" : "560081" }, "borough" : "Tiger" }
+> db.restaurant.find({"borough": "Gujrati"})
+> db.restaurant.find({"borough":"croydon"})
+{ "_id" : ObjectId("602a7a3e641bd14ef2349412"), "name" : "ITC", "restaurant_id" : "20075", "address" : { "building" : "10", "coord" : [ -74.85, 50.84 ], "street" : "ITC Ave", "zipcode" : "560076" }, "borough" : "croydon", "cuisine" : "Bakery", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 4 }, { "date" : { "$date" : 1378857600000 }, "grade" : "B", "score" : 5 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "C", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 14 } ] }
+>  db.restaurant.find({"borough":"Lion"})
+{ "_id" : ObjectId("602a7fb3641bd14ef2349416"), "name" : "Obreoi", "restaurant_id" : "20079", "address" : { "building" : "14", "coord" : [ -83.877, 93.487 ], "street" : "30th main", "zipcode" : "560080" }, "borough" : "Lion", "cuisine" : "south indian", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 11 }, { "date" : { "$date" : 1358985600000 }, "grade" : "B", "score" : 13 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 14 }, { "date" : { "$date" : 1299715200000 }, "grade" : "C", "score" : 9 } ] }
+> db.restaurants.find({"borough": "Ealing"}).skip(5).limit(5)
+> db.restaurants.find({"borough": "Ealing"}).skip(1).limit(5)
+> db.restaurants.insert({
+... "name": "7 Seas",
+...   "restaurant_id": "20080",
+...   "address": {
+...      "building": "15",
+...      "coord": [  -103.877, 63.487],
+...      "street": "31th main",
+...      "zipcode": "560081"
+...   },
+...   "borough": "Tiger",
+...   "cuisine": "malyali",
+...   "grades": [
+...      { "date": { "$date": 1393804800000 }, "grade": "B", "score": 15 },
+...      { "date": { "$date": 1378857600000 }, "grade": "C", "score": 18 },
+...      { "date": { "$date": 1358985600000 }, "grade": "A", "score": 12 },
+...      { "date": { "$date": 1322006400000 }, "grade": "A", "score": 10 },
+...      { "date": { "$date": 1299715200000 }, "grade": "A", "score": 6 }
+...   ]
+...
+... )}
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):20:0
+> db.restaurants.insert({
+... "name": "7 Seas",
+...   "restaurant_id": "20080",
+...   "address": {
+...      "building": "15",
+...      "coord": [  -103.877, 63.487],
+...      "street": "31th main",
+...      "zipcode": "560081"
+...   },
+...   "borough": "Ealing",
+...   "cuisine": "malyali",
+...   "grades": [
+...      { "date": { "$date": 1393804800000 }, "grade": "B", "score": 15 },
+...      { "date": { "$date": 1378857600000 }, "grade": "C", "score": 18 },
+...      { "date": { "$date": 1358985600000 }, "grade": "A", "score": 12 },
+...      { "date": { "$date": 1322006400000 }, "grade": "A", "score": 10 },
+...      { "date": { "$date": 1299715200000 }, "grade": "A", "score": 6 }
+...   ]
+...
+... })
+WriteResult({ "nInserted" : 1 })
+> db.restaurant.insert({
+... "name": "7 Seas",
+...   "restaurant_id": "20080",
+...   "address": {
+...      "building": "15",
+...      "coord": [  -103.877, 63.487],
+...      "street": "31th main",
+...      "zipcode": "560081"
+...   },
+...   "borough": "Ealing",
+...   "cuisine": "malyali",
+...   "grades": [
+...      { "date": { "$date": 1393804800000 }, "grade": "B", "score": 15 },
+...      { "date": { "$date": 1378857600000 }, "grade": "C", "score": 18 },
+...      { "date": { "$date": 1358985600000 }, "grade": "A", "score": 12 },
+...      { "date": { "$date": 1322006400000 }, "grade": "A", "score": 10 },
+...      { "date": { "$date": 1299715200000 }, "grade": "A", "score": 6 }
+...   ]
+...
+... })
+WriteResult({ "nInserted" : 1 })
+> db.restaurant.insert({
+... "name": "7 Seas",
+...   "restaurant_id": "20080",
+...   "address": {
+...      "building": "15",
+...      "coord": [  -103.877, 63.487],
+...      "street": "31th main",
+...      "zipcode": "560081"
+...   },
+...   "borough": "Ealing",
+...   "cuisine": "malyali",
+...   "grades": [
+...      { "date": { "$date": 1393804800000 }, "grade": "B", "score": 15 },
+...      { "date": { "$date": 1378857600000 }, "grade": "C", "score": 18 },
+...      { "date": { "$date": 1358985600000 }, "grade": "A", "score": 12 },
+...      { "date": { "$date": 1322006400000 }, "grade": "A", "score": 10 },
+...      { "date": { "$date": 1299715200000 }, "grade": "A", "score": 6 }
+...   ]
+...
+... })
+WriteResult({ "nInserted" : 1 })
+> db.restaurant.insert({
+... "name": "7 Seas",
+...   "restaurant_id": "20080",
+...   "address": {
+...      "building": "15",
+...      "coord": [  -103.877, 63.487],
+...      "street": "31th main",
+...      "zipcode": "560081"
+...   },
+...   "borough": "Ealing",
+...   "cuisine": "malyali",
+...   "grades": [
+...      { "date": { "$date": 1393804800000 }, "grade": "B", "score": 15 },
+...      { "date": { "$date": 1378857600000 }, "grade": "C", "score": 18 },
+...      { "date": { "$date": 1358985600000 }, "grade": "A", "score": 12 },
+...      { "date": { "$date": 1322006400000 }, "grade": "A", "score": 10 },
+...      { "date": { "$date": 1299715200000 }, "grade": "A", "score": 6 }
+...   ]
+...
+... })
+WriteResult({ "nInserted" : 1 })
+> db.restaurant.insert({
+... "name": "7 Seas",
+...   "restaurant_id": "20080",
+...   "address": {
+...      "building": "15",
+...      "coord": [  -103.877, 63.487],
+...      "street": "31th main",
+...      "zipcode": "560081"
+...   },
+...   "borough": "Ealing",
+...   "cuisine": "malyali",
+...   "grades": [
+...      { "date": { "$date": 1393804800000 }, "grade": "B", "score": 15 },
+...      { "date": { "$date": 1378857600000 }, "grade": "C", "score": 18 },
+...      { "date": { "$date": 1358985600000 }, "grade": "A", "score": 12 },
+...      { "date": { "$date": 1322006400000 }, "grade": "A", "score": 10 },
+...      { "date": { "$date": 1299715200000 }, "grade": "A", "score": 6 }
+...   ]
+...
+... })
+WriteResult({ "nInserted" : 1 })
+> db.restaurants.find({"borough": "Ealing"}).skip(5).limit(5)
+> db.restaurants.find({"borough": "Ealing"})
+{ "_id" : ObjectId("602aa9ab641bd14ef2349418"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : "560081" }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+>  db.restaurant.find({"borough": "Ealing"}).skip(5).limit(5)
+>  db.restaurants.find({"borough": "Ealing"}).skip(5).limit(5)
+>
+>
+>
+>
+>
+>
+>
+> db.restaurant.find({grades : { $elemMatch:{"score":{$gt : 9}}}})
+{ "_id" : ObjectId("602a7a3e641bd14ef2349412"), "name" : "ITC", "restaurant_id" : "20075", "address" : { "building" : "10", "coord" : [ -74.85, 50.84 ], "street" : "ITC Ave", "zipcode" : "560076" }, "borough" : "croydon", "cuisine" : "Bakery", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 4 }, { "date" : { "$date" : 1378857600000 }, "grade" : "B", "score" : 5 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "C", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 14 } ] }
+{ "_id" : ObjectId("602a7c86641bd14ef2349413"), "name" : "Taj hotels", "restaurant_id" : "20076", "address" : { "building" : "11", "coord" : [ -23.877, 23.447 ], "street" : "Taj street", "zipcode" : "560077" }, "borough" : "Ealing", "cuisine" : "Hyderabadi", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "D", "score" : 4 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 6 }, { "date" : { "$date" : 1358985600000 }, "grade" : "C", "score" : 11 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 4 } ] }
+{ "_id" : ObjectId("602a7e6a641bd14ef2349414"), "name" : "4 Seasons", "restaurant_id" : "20077", "address" : { "building" : "12", "coord" : [ -43.877, 53.447 ], "street" : "27th main", "zipcode" : "560078" }, "borough" : "Darling", "cuisine" : "Gujrati", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 7 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 8 }, { "date" : { "$date" : 1358985600000 }, "grade" : "B", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "B", "score" : 8 }, { "date" : { "$date" : 1299715200000 }, "grade" : "C", "score" : 6 } ] }
+{ "_id" : ObjectId("602a7ef1641bd14ef2349415"), "name" : "JP mariott", "restaurant_id" : "20078", "address" : { "building" : "13", "coord" : [ -63.877, 83.487 ], "street" : "29th main", "zipcode" : "560079" }, "borough" : "Gargling", "cuisine" : "Marvadi", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "C", "score" : 9 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 10 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 11 }, { "date" : { "$date" : 1322006400000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 8 } ] }
+{ "_id" : ObjectId("602a7fb3641bd14ef2349416"), "name" : "Obreoi", "restaurant_id" : "20079", "address" : { "building" : "14", "coord" : [ -83.877, 93.487 ], "street" : "30th main", "zipcode" : "560080" }, "borough" : "Lion", "cuisine" : "south indian", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 11 }, { "date" : { "$date" : 1358985600000 }, "grade" : "B", "score" : 13 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 14 }, { "date" : { "$date" : 1299715200000 }, "grade" : "C", "score" : 9 } ] }
+{ "_id" : ObjectId("602a84bc641bd14ef2349417"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : "560081" }, "borough" : "Tiger", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+{ "_id" : ObjectId("602aa9c4641bd14ef2349419"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : "560081" }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+{ "_id" : ObjectId("602aa9d6641bd14ef234941a"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : "560081" }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+{ "_id" : ObjectId("602aa9e2641bd14ef234941b"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : "560081" }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+{ "_id" : ObjectId("602aa9fe641bd14ef234941c"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : "560081" }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+>
+>
+>
+>
+>
+> db.restaurant.find({grades : { $elemMatch:{"score":{$gt :4 , $lt :10}}}})
+{ "_id" : ObjectId("602a7a3e641bd14ef2349412"), "name" : "ITC", "restaurant_id" : "20075", "address" : { "building" : "10", "coord" : [ -74.85, 50.84 ], "street" : "ITC Ave", "zipcode" : "560076" }, "borough" : "croydon", "cuisine" : "Bakery", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 4 }, { "date" : { "$date" : 1378857600000 }, "grade" : "B", "score" : 5 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "C", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 14 } ] }
+{ "_id" : ObjectId("602a7c86641bd14ef2349413"), "name" : "Taj hotels", "restaurant_id" : "20076", "address" : { "building" : "11", "coord" : [ -23.877, 23.447 ], "street" : "Taj street", "zipcode" : "560077" }, "borough" : "Ealing", "cuisine" : "Hyderabadi", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "D", "score" : 4 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 6 }, { "date" : { "$date" : 1358985600000 }, "grade" : "C", "score" : 11 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 4 } ] }
+{ "_id" : ObjectId("602a7e6a641bd14ef2349414"), "name" : "4 Seasons", "restaurant_id" : "20077", "address" : { "building" : "12", "coord" : [ -43.877, 53.447 ], "street" : "27th main", "zipcode" : "560078" }, "borough" : "Darling", "cuisine" : "Gujrati", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 7 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 8 }, { "date" : { "$date" : 1358985600000 }, "grade" : "B", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "B", "score" : 8 }, { "date" : { "$date" : 1299715200000 }, "grade" : "C", "score" : 6 } ] }
+{ "_id" : ObjectId("602a7ef1641bd14ef2349415"), "name" : "JP mariott", "restaurant_id" : "20078", "address" : { "building" : "13", "coord" : [ -63.877, 83.487 ], "street" : "29th main", "zipcode" : "560079" }, "borough" : "Gargling", "cuisine" : "Marvadi", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "C", "score" : 9 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 10 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 11 }, { "date" : { "$date" : 1322006400000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 8 } ] }
+{ "_id" : ObjectId("602a7fb3641bd14ef2349416"), "name" : "Obreoi", "restaurant_id" : "20079", "address" : { "building" : "14", "coord" : [ -83.877, 93.487 ], "street" : "30th main", "zipcode" : "560080" }, "borough" : "Lion", "cuisine" : "south indian", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 11 }, { "date" : { "$date" : 1358985600000 }, "grade" : "B", "score" : 13 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 14 }, { "date" : { "$date" : 1299715200000 }, "grade" : "C", "score" : 9 } ] }
+{ "_id" : ObjectId("602a84bc641bd14ef2349417"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : "560081" }, "borough" : "Tiger", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+{ "_id" : ObjectId("602aa9c4641bd14ef2349419"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : "560081" }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+{ "_id" : ObjectId("602aa9d6641bd14ef234941a"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : "560081" }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+{ "_id" : ObjectId("602aa9e2641bd14ef234941b"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : "560081" }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+{ "_id" : ObjectId("602aa9fe641bd14ef234941c"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : "560081" }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+>
+>
+>
+>
+> db.restaurants.find( {
+...                              "cuisine" : {$ne : "American "},
+...                              "grades.grade" :"A",
+...                              "borough": {$ne : "Brooklyn"}
+...                        }
+...                     ).sort({"cuisine":-1})
+{ "_id" : ObjectId("602aa9ab641bd14ef2349418"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : "560081" }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+>
+> db.restaurants.find( {
+...                              "cuisine" : {$ne : "Hyderabadi"},
+...                              "grades.grade" :"A",
+...                              "borough": {$ne : "Brooklyn"}
+...                        }
+...                     ).sort({"cuisine":-1})
+{ "_id" : ObjectId("602aa9ab641bd14ef2349418"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : "560081" }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+> db.restaurant.update({},{$set:{"address.zipcode":5670070}},{multi:true})
+WriteResult({ "nMatched" : 10, "nUpserted" : 0, "nModified" : 10 })
+>
+> db.restaurant.update({},{$set:{"address.zipcode":560070}},{multi:true})
+WriteResult({ "nMatched" : 10, "nUpserted" : 0, "nModified" : 10 })
+> db.restaurant.find()
+{ "_id" : ObjectId("602a7a3e641bd14ef2349412"), "name" : "ITC", "restaurant_id" : "20075", "address" : { "building" : "10", "coord" : [ -74.85, 50.84 ], "street" : "ITC Ave", "zipcode" : 560070 }, "borough" : "croydon", "cuisine" : "Bakery", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 4 }, { "date" : { "$date" : 1378857600000 }, "grade" : "B", "score" : 5 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "C", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 14 } ] }
+{ "_id" : ObjectId("602a7c86641bd14ef2349413"), "name" : "Taj hotels", "restaurant_id" : "20076", "address" : { "building" : "11", "coord" : [ -23.877, 23.447 ], "street" : "Taj street", "zipcode" : 560070 }, "borough" : "Ealing", "cuisine" : "Hyderabadi", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "D", "score" : 4 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 6 }, { "date" : { "$date" : 1358985600000 }, "grade" : "C", "score" : 11 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 4 } ] }
+{ "_id" : ObjectId("602a7e6a641bd14ef2349414"), "name" : "4 Seasons", "restaurant_id" : "20077", "address" : { "building" : "12", "coord" : [ -43.877, 53.447 ], "street" : "27th main", "zipcode" : 560070 }, "borough" : "Darling", "cuisine" : "Gujrati", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 7 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 8 }, { "date" : { "$date" : 1358985600000 }, "grade" : "B", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "B", "score" : 8 }, { "date" : { "$date" : 1299715200000 }, "grade" : "C", "score" : 6 } ] }
+{ "_id" : ObjectId("602a7ef1641bd14ef2349415"), "name" : "JP mariott", "restaurant_id" : "20078", "address" : { "building" : "13", "coord" : [ -63.877, 83.487 ], "street" : "29th main", "zipcode" : 560070 }, "borough" : "Gargling", "cuisine" : "Marvadi", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "C", "score" : 9 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 10 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 11 }, { "date" : { "$date" : 1322006400000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 8 } ] }
+{ "_id" : ObjectId("602a7fb3641bd14ef2349416"), "name" : "Obreoi", "restaurant_id" : "20079", "address" : { "building" : "14", "coord" : [ -83.877, 93.487 ], "street" : "30th main", "zipcode" : 560070 }, "borough" : "Lion", "cuisine" : "south indian", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 11 }, { "date" : { "$date" : 1358985600000 }, "grade" : "B", "score" : 13 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 14 }, { "date" : { "$date" : 1299715200000 }, "grade" : "C", "score" : 9 } ] }
+{ "_id" : ObjectId("602a84bc641bd14ef2349417"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 560070 }, "borough" : "Tiger", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+{ "_id" : ObjectId("602aa9c4641bd14ef2349419"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 560070 }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+{ "_id" : ObjectId("602aa9d6641bd14ef234941a"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 560070 }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+{ "_id" : ObjectId("602aa9e2641bd14ef234941b"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 560070 }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+{ "_id" : ObjectId("602aa9fe641bd14ef234941c"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 560070 }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+>
+>
+>
+>  db.restaurant.update({"borough":"Croydon"},{$set:{"address.zipcode":987456}},{multi:true})
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+>  db.restaurant.update({"borough":"Ealing"},{$set:{"address.zipcode":987456}},{multi:true})
+WriteResult({ "nMatched" : 5, "nUpserted" : 0, "nModified" : 5 })
+> db.restaurant.find({"borough":"Ealing"})
+{ "_id" : ObjectId("602a7c86641bd14ef2349413"), "name" : "Taj hotels", "restaurant_id" : "20076", "address" : { "building" : "11", "coord" : [ -23.877, 23.447 ], "street" : "Taj street", "zipcode" : 987456 }, "borough" : "Ealing", "cuisine" : "Hyderabadi", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "D", "score" : 4 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 6 }, { "date" : { "$date" : 1358985600000 }, "grade" : "C", "score" : 11 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 4 } ] }
+{ "_id" : ObjectId("602aa9c4641bd14ef2349419"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 987456 }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+{ "_id" : ObjectId("602aa9d6641bd14ef234941a"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 987456 }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+{ "_id" : ObjectId("602aa9e2641bd14ef234941b"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 987456 }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+{ "_id" : ObjectId("602aa9fe641bd14ef234941c"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 987456 }, "borough" : "Ealing", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+>
+>
+>
+> db.Restaurant.remove({"restaurant_id":20076})
+WriteResult({ "nRemoved" : 0 })
+> db.Restaurant.remove({"restaurant_id":"20076"})
+WriteResult({ "nRemoved" : 0 })
+> db.Restaurant.remove({"restaurant_id":20077})
+WriteResult({ "nRemoved" : 0 })
+> db.Restaurant.remove({"restaurant_id":"20076"})
+WriteResult({ "nRemoved" : 0 })
+>
+>
+>
+>
+> db.restaurant.remove({"restaurant_id":20076})
+WriteResult({ "nRemoved" : 0 })
+>  db.restaurant.remove({"restaurant_id":"20076"})
+WriteResult({ "nRemoved" : 1 })
+> db.restaurant.update({"address.zipcode":987456}, {$unset: {"grades": ""}}, {multi:true})
+WriteResult({ "nMatched" : 4, "nUpserted" : 0, "nModified" : 4 })
+> db.restaurant.find()
+{ "_id" : ObjectId("602a7a3e641bd14ef2349412"), "name" : "ITC", "restaurant_id" : "20075", "address" : { "building" : "10", "coord" : [ -74.85, 50.84 ], "street" : "ITC Ave", "zipcode" : 560070 }, "borough" : "croydon", "cuisine" : "Bakery", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 4 }, { "date" : { "$date" : 1378857600000 }, "grade" : "B", "score" : 5 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "C", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 14 } ] }
+{ "_id" : ObjectId("602a7e6a641bd14ef2349414"), "name" : "4 Seasons", "restaurant_id" : "20077", "address" : { "building" : "12", "coord" : [ -43.877, 53.447 ], "street" : "27th main", "zipcode" : 560070 }, "borough" : "Darling", "cuisine" : "Gujrati", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 7 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 8 }, { "date" : { "$date" : 1358985600000 }, "grade" : "B", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "B", "score" : 8 }, { "date" : { "$date" : 1299715200000 }, "grade" : "C", "score" : 6 } ] }
+{ "_id" : ObjectId("602a7ef1641bd14ef2349415"), "name" : "JP mariott", "restaurant_id" : "20078", "address" : { "building" : "13", "coord" : [ -63.877, 83.487 ], "street" : "29th main", "zipcode" : 560070 }, "borough" : "Gargling", "cuisine" : "Marvadi", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "C", "score" : 9 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 10 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 11 }, { "date" : { "$date" : 1322006400000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 8 } ] }
+{ "_id" : ObjectId("602a7fb3641bd14ef2349416"), "name" : "Obreoi", "restaurant_id" : "20079", "address" : { "building" : "14", "coord" : [ -83.877, 93.487 ], "street" : "30th main", "zipcode" : 560070 }, "borough" : "Lion", "cuisine" : "south indian", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 11 }, { "date" : { "$date" : 1358985600000 }, "grade" : "B", "score" : 13 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 14 }, { "date" : { "$date" : 1299715200000 }, "grade" : "C", "score" : 9 } ] }
+{ "_id" : ObjectId("602a84bc641bd14ef2349417"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 560070 }, "borough" : "Tiger", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+{ "_id" : ObjectId("602aa9c4641bd14ef2349419"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 987456 }, "borough" : "Ealing", "cuisine" : "malyali" }
+{ "_id" : ObjectId("602aa9d6641bd14ef234941a"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 987456 }, "borough" : "Ealing", "cuisine" : "malyali" }
+{ "_id" : ObjectId("602aa9e2641bd14ef234941b"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 987456 }, "borough" : "Ealing", "cuisine" : "malyali" }
+{ "_id" : ObjectId("602aa9fe641bd14ef234941c"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 987456 }, "borough" : "Ealing", "cuisine" : "malyali" }
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> db.restaurant.ensureIndex({"restaurant_id":1},{"unique":true})
+{
+        "ok" : 0,
+        "errmsg" : "Index build failed: 31071f3a-6737-42c1-9217-cbc4289b5537: Collection praxis.restaurant ( 43fad61b-9dd0-4957-9fdc-1a26292fa1ea ) :: caused by :: E11000 duplicate key error collection: praxis.restaurant index: restaurant_id_1 dup key: { restaurant_id: \"20080\" }",
+        "code" : 11000,
+        "codeName" : "DuplicateKey",
+        "keyPattern" : {
+                "restaurant_id" : 1
+        },
+        "keyValue" : {
+                "restaurant_id" : "20080"
+        }
+}
+>  db.restaurant.ensureIndex({"restaurant_id":"20080"},{"unique":true})
+{
+        "ok" : 0,
+        "errmsg" : "Error in specification { key: { restaurant_id: \"20080\" }, name: \"restaurant_id_20080\", unique: true } :: caused by :: Unknown index plugin '20080'",
+        "code" : 67,
+        "codeName" : "CannotCreateIndex"
+}
+>
+>
+>
+> db.restaurant.ensureIndex({"borough":"Tiger", "name":"4 Seasons"},{"unique":true})
+{
+        "ok" : 0,
+        "errmsg" : "Error in specification { key: { borough: \"Tiger\", name: \"4 Seasons\" }, name: \"borough_Tiger_name_4 Seasons\", unique: true } :: caused by :: Unknown index plugin 'Tiger'",
+        "code" : 67,
+        "codeName" : "CannotCreateIndex"
+}
+> Taj hotels
+uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:4
+>
+>
+>
+> db.restaurant.ensureIndex({"borough":"Ealing", "name":"Taj hotels"},{"unique":true})
+{
+        "ok" : 0,
+        "errmsg" : "Error in specification { key: { borough: \"Ealing\", name: \"Taj hotels\" }, name: \"borough_Ealing_name_Taj hotels\", unique: true } :: caused by :: Unknown index plugin 'Ealing'",
+        "code" : 67,
+        "codeName" : "CannotCreateIndex"
+}
+> db.restaurant.ensureIndex({"restaurant_id":1},{"unique":true})
+{
+        "ok" : 0,
+        "errmsg" : "Index build failed: b3558e3e-4873-46f2-b25b-59dbe9d8d9d2: Collection praxis.restaurant ( 43fad61b-9dd0-4957-9fdc-1a26292fa1ea ) :: caused by :: E11000 duplicate key error collection: praxis.restaurant index: restaurant_id_1 dup key: { restaurant_id: \"20080\" }",
+        "code" : 11000,
+        "codeName" : "DuplicateKey",
+        "keyPattern" : {
+                "restaurant_id" : 1
+        },
+        "keyValue" : {
+                "restaurant_id" : "20080"
+        }
+}
+> db.Restaurant.ensureIndex({"restaurant_id":1},{"unique":true};
+...
+... ^C
+
+> db.Restaurant.ensureIndex({"restaurant_id":1},{"unique":true};
+... ^C
+
+> db.Restaurant.ensureIndex({"restaurant_id":1},{"unique":true}
+... ^C
+
+> db.restaurant.ensureIndex({"restaurant_id":1},{"unique":true})
+{
+        "ok" : 0,
+        "errmsg" : "Index build failed: 9af8196c-af48-4dd2-b4ae-756fdb8c1010: Collection praxis.restaurant ( 43fad61b-9dd0-4957-9fdc-1a26292fa1ea ) :: caused by :: E11000 duplicate key error collection: praxis.restaurant index: restaurant_id_1 dup key: { restaurant_id: \"20080\" }",
+        "code" : 11000,
+        "codeName" : "DuplicateKey",
+        "keyPattern" : {
+                "restaurant_id" : 1
+        },
+        "keyValue" : {
+                "restaurant_id" : "20080"
+        }
+}
+>  db.restaurant.find()
+{ "_id" : ObjectId("602a7a3e641bd14ef2349412"), "name" : "ITC", "restaurant_id" : "20075", "address" : { "building" : "10", "coord" : [ -74.85, 50.84 ], "street" : "ITC Ave", "zipcode" : 560070 }, "borough" : "croydon", "cuisine" : "Bakery", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 4 }, { "date" : { "$date" : 1378857600000 }, "grade" : "B", "score" : 5 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "C", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 14 } ] }
+{ "_id" : ObjectId("602a7e6a641bd14ef2349414"), "name" : "4 Seasons", "restaurant_id" : "20077", "address" : { "building" : "12", "coord" : [ -43.877, 53.447 ], "street" : "27th main", "zipcode" : 560070 }, "borough" : "Darling", "cuisine" : "Gujrati", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 7 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 8 }, { "date" : { "$date" : 1358985600000 }, "grade" : "B", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "B", "score" : 8 }, { "date" : { "$date" : 1299715200000 }, "grade" : "C", "score" : 6 } ] }
+{ "_id" : ObjectId("602a7ef1641bd14ef2349415"), "name" : "JP mariott", "restaurant_id" : "20078", "address" : { "building" : "13", "coord" : [ -63.877, 83.487 ], "street" : "29th main", "zipcode" : 560070 }, "borough" : "Gargling", "cuisine" : "Marvadi", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "C", "score" : 9 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 10 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 11 }, { "date" : { "$date" : 1322006400000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 8 } ] }
+{ "_id" : ObjectId("602a7fb3641bd14ef2349416"), "name" : "Obreoi", "restaurant_id" : "20079", "address" : { "building" : "14", "coord" : [ -83.877, 93.487 ], "street" : "30th main", "zipcode" : 560070 }, "borough" : "Lion", "cuisine" : "south indian", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 11 }, { "date" : { "$date" : 1358985600000 }, "grade" : "B", "score" : 13 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 14 }, { "date" : { "$date" : 1299715200000 }, "grade" : "C", "score" : 9 } ] }
+{ "_id" : ObjectId("602a84bc641bd14ef2349417"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 560070 }, "borough" : "Tiger", "cuisine" : "malyali", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "B", "score" : 15 }, { "date" : { "$date" : 1378857600000 }, "grade" : "C", "score" : 18 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 12 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1299715200000 }, "grade" : "A", "score" : 6 } ] }
+{ "_id" : ObjectId("602aa9c4641bd14ef2349419"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 987456 }, "borough" : "Ealing", "cuisine" : "malyali" }
+{ "_id" : ObjectId("602aa9d6641bd14ef234941a"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 987456 }, "borough" : "Ealing", "cuisine" : "malyali" }
+{ "_id" : ObjectId("602aa9e2641bd14ef234941b"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 987456 }, "borough" : "Ealing", "cuisine" : "malyali" }
+{ "_id" : ObjectId("602aa9fe641bd14ef234941c"), "name" : "7 Seas", "restaurant_id" : "20080", "address" : { "building" : "15", "coord" : [ -103.877, 63.487 ], "street" : "31th main", "zipcode" : 987456 }, "borough" : "Ealing", "cuisine" : "malyali" }
+>
+>
+> db.restaurant.remove({"restaurant_id":20080})
+WriteResult({ "nRemoved" : 0 })
+> db.restaurant.remove({"restaurant_id":"20080"})
+WriteResult({ "nRemoved" : 5 })
+> db.restaurant.ensureIndex({"restaurant_id":1},{"unique":true})
+{
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 1,
+        "numIndexesAfter" : 2,
+        "ok" : 1
+}
+> db.restaurant.ensureIndex({"borough":1, "name":1},{"unique":true})
+{
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 2,
+        "numIndexesAfter" : 3,
+        "ok" : 1
+}
+>
+> db.dropDatabase()
+{ "dropped" : "praxis", "ok" : 1 }
+> use praxis
+switched to db praxis
+> db.restaurant.find()
+>
